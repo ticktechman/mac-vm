@@ -2,6 +2,12 @@
 
 This is a ubuntu virtual machine sample running on macOS. It works for ubuntu25.04 cloud image.
 
+# deps
+
+```bash
+brew install cdrtools
+```
+
 # run 
 
 ```bash
