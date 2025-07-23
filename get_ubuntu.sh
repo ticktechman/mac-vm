@@ -8,6 +8,9 @@
 ##
 ###############################################################################
 
+## brew install bash first
+## bash 4.x+
+
 declare -A images
 images["initrd"]="https://cloud-images.ubuntu.com/releases/plucky/release/unpacked/ubuntu-25.04-server-cloudimg-arm64-initrd-generic"
 images["vmlinuz.gz"]="https://cloud-images.ubuntu.com/releases/plucky/release/unpacked/ubuntu-25.04-server-cloudimg-arm64-vmlinuz-generic"
