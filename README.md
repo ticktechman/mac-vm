@@ -1,6 +1,6 @@
 # what
 
-This is a ubuntu virtual machine sample running on macOS. It works for ubuntu25.04 cloud image.
+This is a ubuntu virtual machine sample running on macOS(Apple Silicon M2). It works for ubuntu25.04 cloud image.
 
 # design
 
@@ -30,4 +30,22 @@ the user name is ubuntu and password is ubuntu
 # resize the rootfs.raw size
 
 run `resize.sh` on a linux machine
+
+# contents in ubuntu cloud image
+
+> https://cloud-images.ubuntu.com/releases/plucky/release/ubuntu-25.04-server-cloudimg-arm64.img
+
+This image file is a qcow2 format including:
+
+- EFI partition(vfat) for boot loader: grub
+- Linux kernel partition(ext4) includes vmlinuz and initrd
+- A root filesystem partition(ext4) for ubuntu25.04 server
+
+The qcow2 format can not be used on macOS virtualization framework, so you need to convert it to a raw format by the following command:
+
+```bash
+qemu-img convert -O raw ubuntu-25.04-server-cloudimg-arm64.img ubuntu-25.04-server-cloudimg-arm64.raw
+```
+
+And then you can use `fdisk -l ubuntu-25.04-server-cloudimg-arm64.raw` to show the GPT partition information. And mount each partition to extract file from in it.
 
