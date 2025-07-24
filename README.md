@@ -13,7 +13,7 @@ This is a ubuntu virtual machine sample running on macOS. It works for ubuntu25.
 # deps
 
 ```bash
-brew install cdrtools qemu
+brew install cdrtools qemu-system-arm
 ```
 
 # run 
@@ -26,4 +26,8 @@ make
 ```
 
 the user name is ubuntu and password is ubuntu
+
+# resize the rootfs.raw size
+
+run `resize.sh` on a linux machine
 
