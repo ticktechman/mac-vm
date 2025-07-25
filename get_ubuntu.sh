@@ -8,8 +8,8 @@
 ##
 ###############################################################################
 
-## brew install bash first
-## bash 4.x+
+## first: brew install bash
+## bash 4.x+ support map but the original macOS bash version is v3.2
 
 declare -A images
 images["initrd"]="https://cloud-images.ubuntu.com/releases/plucky/release/unpacked/ubuntu-25.04-server-cloudimg-arm64-initrd-generic"

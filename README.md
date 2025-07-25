@@ -21,11 +21,10 @@ brew install cdrtools qemu-system-arm
 ```bash
 make
 ./get_ubuntu.sh
-
 ./ubuntu
 ```
 
-the user name is ubuntu and password is ubuntu
+login username(ubuntu) and password(ubuntu) customized in seed.iso
 
 # resize the rootfs.raw size
 
@@ -41,7 +40,7 @@ This image file is a qcow2 format including:
 - Linux kernel partition(ext4) includes vmlinuz and initrd
 - A root filesystem partition(ext4) for ubuntu25.04 server
 
-The qcow2 format can not be used on macOS virtualization framework, so you need to convert it to a raw format by the following command:
+The qcow2 format can not be used on macOS virtualization framework directly, so you need to convert it to a raw format by the following command:
 
 ```bash
 qemu-img convert -O raw ubuntu-25.04-server-cloudimg-arm64.img ubuntu-25.04-server-cloudimg-arm64.raw
